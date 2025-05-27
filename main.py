@@ -7,7 +7,7 @@ def main():
         return
 
     # Simulate calling an external API
-    print(f"Calling external API with key: {api_key[:4]}*** (hidden)")
+    print(f"Calling external API with key demo practical: {api_key[:4]}*** (hidden)")
 
 if __name__ == "__main__":
     main()
