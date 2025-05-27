@@ -3,7 +3,7 @@ import os
 def main():
     api_key = os.getenv("API_KEY")
     if not api_key:
-        print("No API key provided!")
+        print("No API key provided!!!!")
         return
 
     # Simulate calling an external API
