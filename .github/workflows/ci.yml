@@ -1,11 +1,27 @@
-name: Hardcoded API Key Demo
+name: API Key Secret Demo
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  demo:
+  run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Echo API Key
-        run: echo "Using API Key: 12345-SECRET-KEY"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt || echo "No dependencies needed"
+
+      - name: Run script using secret API key
+        env:
+          API_KEY: ${{ secrets.MY_API_KEY }}
+        run: python main.py
