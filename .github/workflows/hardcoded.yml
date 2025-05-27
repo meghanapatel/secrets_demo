@@ -7,7 +7,7 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo API Key
+      - name: Echo Hardcode API Key
         run: |
           echo "Using Hardcode API Key: 12345-SECRET-KEY"
   
